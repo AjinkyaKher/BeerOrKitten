@@ -1,0 +1,13 @@
+<ion-view view-title="High Scores">
+  <ion-content class="top-buffer-high-scores">
+  	<h3 class="text-center"> <i class="icon ion-ribbon-a"></i> &nbsp;Hall of Fame&nbsp; <i class="icon ion-ribbon-a"></i></h3>
+  	<div class="list wrapping-list text-center top-buffer">
+    	<ion-item ng-repeat="user in users | orderBy:'-highscore' | limitTo:5"> {{user.username}}: {{user.highscore}} </ion-item>
+    </div>
+    <div class="row row-center">
+    	<div class="col col-80 col-offset-10">
+  			<button class="button button-positive button-width" ng-click="goBack()"> Go Back </button>
+  		</div>
+    </div>
+  </ion-content>
+</ion-view>

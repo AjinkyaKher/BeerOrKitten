@@ -1,0 +1,76 @@
+<ion-view view-title="Login">
+
+  <ion-content>
+    <form ng-show="currentSelection=='signup'">
+      <div class="list wrapping-list">
+        <label class="item item-input">
+          <span class="input-label">Username</span>
+          <input type="text" ng-model="loginData.username" ng-disabled="loginInProgress" ng-change="clearSignUpErrorMessage();validateLoginForm()" placeholder="Username">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="password" ng-model="loginData.password" ng-disabled="loginInProgress" placeholder="Password" ng-change="validateLoginForm()">
+        </label>
+        <label class="item text-center">
+          <button class="button button-block button-positive" type="submit" ng-hide="loginInProgress" ng-click="signUp()" ng-disabled="dataIncomplete"> Sign up &amp; Log in </button>
+          <ion-spinner icon="spiral" ng-show="loginInProgress"></ion-spinner>
+          <span ng-show="signUpFailed"> Sorry the username {{loginData.username}} is already taken. Please try a different one. </span>
+        </label>
+        <div class="row row-center">
+          <div class="col col-100 top-buffer-first-button">
+            <h2 class="text-center logo-text"> Beer or Kitten </h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-40">
+            <img src="resources/images/beer.jpg" width="100%">
+          </div>
+          <div class="col col-40 col-offset-20">
+            <img src="resources/images/kitten.jpg" width="100%">
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <form ng-submit="login()" ng-show="currentSelection=='login'">
+      <div class="list wrapping-list">
+        <label class="item item-input">
+          <span class="input-label">Username</span>
+          <input type="text" ng-model="loginData.username" ng-disabled="loginInProgress" ng-change="clearLoginErrorMessage();validateLoginForm()" placeholder="Username">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="password" ng-model="loginData.password" ng-disabled="loginInProgress" ng-change="clearLoginErrorMessage();validateLoginForm()" placeholder="Password">
+        </label>
+        <label class="item text-center">
+          <button class="button button-block button-positive" type="submit" ng-hide="loginInProgress" ng-disabled="dataIncomplete"> Log in </button>
+          <ion-spinner icon="spiral" ng-show="loginInProgress"></ion-spinner>
+          <span ng-show="loginFailed"> The username/password combination does not match. Please check your credentials and try again. </span>
+        </label>
+        <div class="row row-center">
+          <div class="col col-100 top-buffer-first-button">
+            <h2 class="text-center logo-text"> Beer or Kitten </h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-40">
+            <img src="resources/images/beer.jpg" width="100%">
+          </div>
+          <div class="col col-40 col-offset-20">
+            <img src="resources/images/kitten.jpg" width="100%">
+          </div>
+        </div>
+      </div>
+    </form>
+  </ion-content>
+
+  <!-- Footer -->
+  <div class="bar bar-footer">
+    <button class="button button-clear" ng-click="currentSelection='signup'" ng-diabled="loginInProgress"> 
+      SIGN UP <i class="icon ion-reply" ng-show="currentSelection=='signup'"></i>
+    </button>
+    <button class="button button-clear" ng-click="currentSelection='login'" ng-diabled="loginInProgress">
+      <i class="icon ion-forward" ng-show="currentSelection=='login'"></i> LOGIN 
+    </button>
+  </div>
+</ion-view>

@@ -1,0 +1,76 @@
+/* Empty. Add your own CSS if you like */
+.top-buffer {
+	margin-top: 30px;
+}
+
+.top-buffer-high-scores {
+	margin-top: 15px;
+}
+
+.top-buffer-first-button {
+	margin-top: 70px;
+}
+
+.top-buffer-first-button-adjust {
+	margin-top: 30px;
+}
+
+.logout-icon {
+	color: #DF0101;
+}
+
+.logo-text {
+	background: -webkit-linear-gradient(#8A0808, #F78181);
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+  	font-family: Arial, Helvetica, sans-serif;
+}
+
+.bicycle-icon {
+	font-size: 30px;
+}
+
+.subheader {
+	font-size: 16px;
+}
+
+.top-buffer-first-image {
+	margin-top: 50px;
+}
+
+.top-buffer-first-progress {
+	margin-top: 400px;
+}
+
+.button-buffer {
+	margin-top: 100px;
+}
+
+.button-width {
+	width: 100%;
+}
+
+.home-image-beer {
+	/*position: center left;*/
+	size:10%;
+}
+
+.home-image-kitten {
+	/*position: center right;*/
+	size:10%;
+}
+
+.state-dynamic {
+  cursor: pointer; 
+  cursor: hand;
+  word-wrap: break-word;
+}
+
+.wrapping-list .item-content, .wrapping-list .item {
+    overflow: initial;
+    white-space: initial;
+}
+
+/*.row, .scroll {
+  height: 100%;
+}*/

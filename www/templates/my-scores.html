@@ -1,0 +1,15 @@
+<ion-view view-title="My Scores">
+  <ion-content class="top-buffer-high-scores">
+  	<h3 class="text-center"> <i class="icon ion-podium"></i> &nbsp;Progress Report&nbsp; <i class="icon ion-podium"></i> </h3>
+  	<div class="list wrapping-list text-center top-buffer">
+    	<ion-list ng-repeat="user in users | filter:{'username':currentUser}:true"> 
+    		<ion-item ng-repeat="score in user.scores.slice().reverse() | limitTo:5 track by $index"> {{score}} </ion-item>
+    	</ion-list>
+    </div>
+    <div class="row row-center">
+    	<div class="col col-80 col-offset-10">
+  			<button class="button button-positive button-width" ng-click="goBack()"> Go Back </button>
+  		</div>
+    </div>
+  </ion-content>
+</ion-view>
