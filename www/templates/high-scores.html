@@ -1,13 +1,47 @@
 <ion-view view-title="High Scores">
+  <ion-nav-bar>
+    <ion-nav-back-button class="button-clear">
+      <i class="ion-chevron-left"></i> Back
+    </ion-nav-back-button>
+  </ion-nav-bar>
+
   <ion-content class="top-buffer-high-scores">
   	<h3 class="text-center"> <i class="icon ion-ribbon-a"></i> &nbsp;Hall of Fame&nbsp; <i class="icon ion-ribbon-a"></i></h3>
-  	<div class="list wrapping-list text-center top-buffer">
-    	<ion-item ng-repeat="user in users | orderBy:'-highscore' | limitTo:5"> {{user.username}}: {{user.highscore}} </ion-item>
+  	<!-- <div class="list wrapping-list text-center top-buffer">
+    	<ion-item ng-repeat="user in users | orderBy:'-level1.highscore' | limitTo:5"> {{user.username}}: {{user.level1.highscore}} </ion-item>
+    </div> -->
+
+    <div class="card top-buffer-high-scores">
+      <div class="item item-divider">
+        LEVEL 1 - {{topScorerLevel1}}
+      </div>
+      <div class="item item-text-wrap">
+          <canvas id="line" class="chart chart-bar" data="data1" labels="labels1" legend="false" options="{multiTooltipTemplate: '<%= datasetLabel %> - <%= value %>'}"></canvas>
+      </div>
     </div>
-    <div class="row row-center">
+
+    <div class="card top-buffer-high-scores">
+      <div class="item item-divider">
+        LEVEL 2 - {{topScorerLevel2}}
+      </div>
+      <div class="item item-text-wrap">
+          <canvas id="line" class="chart chart-bar" data="data2" labels="labels2" legend="false" options="{multiTooltipTemplate: '<%= datasetLabel %> - <%= value %>'}"></canvas>
+      </div>
+    </div>
+
+    <div class="card top-buffer-high-scores">
+      <div class="item item-divider">
+        LEVEL 3 - {{topScorerLevel3}}
+      </div>
+      <div class="item item-text-wrap">
+          <canvas id="line" class="chart chart-bar" data="data3" labels="labels3" legend="false" options="{multiTooltipTemplate: '<%= datasetLabel %> - <%= value %>'}"></canvas>
+      </div>
+    </div>
+
+    <!-- <div class="row row-center">
     	<div class="col col-80 col-offset-10">
   			<button class="button button-positive button-width" ng-click="goBack()"> Go Back </button>
   		</div>
-    </div>
+    </div> -->
   </ion-content>
 </ion-view>

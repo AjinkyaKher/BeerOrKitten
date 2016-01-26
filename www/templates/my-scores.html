@@ -1,15 +1,48 @@
 <ion-view view-title="My Scores">
+  <ion-nav-bar>
+    <ion-nav-back-button class="button-clear">
+      <i class="ion-chevron-left"></i> Back
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  
   <ion-content class="top-buffer-high-scores">
   	<h3 class="text-center"> <i class="icon ion-podium"></i> &nbsp;Progress Report&nbsp; <i class="icon ion-podium"></i> </h3>
-  	<div class="list wrapping-list text-center top-buffer">
-    	<ion-list ng-repeat="user in users | filter:{'username':currentUser}:true"> 
-    		<ion-item ng-repeat="score in user.scores.slice().reverse() | limitTo:5 track by $index"> {{score}} </ion-item>
-    	</ion-list>
+    <div class="card top-buffer-high-scores">
+      <div class="item item-divider">
+        LEVEL 1
+      </div>
+      <div class="item item-text-wrap">
+          <canvas id="line" class="chart chart-line" data="data1" labels="labels" legend="false" options="{multiTooltipTemplate: '<%= datasetLabel %> - <%= value %>'}"></canvas>
+      </div>
     </div>
-    <div class="row row-center">
+
+    <div class="card top-buffer-high-scores">
+      <div class="item item-divider">
+        LEVEL 2
+      </div>
+      <div class="item item-text-wrap">
+          <canvas id="line" class="chart chart-line" data="data2" labels="labels" legend="false" options="{multiTooltipTemplate: '<%= datasetLabel %> - <%= value %>'}"></canvas>
+      </div>
+    </div>
+
+    <div class="card top-buffer-high-scores">
+      <div class="item item-divider">
+        LEVEL 3
+      </div>
+      <div class="item item-text-wrap">
+          <canvas id="line" class="chart chart-line" data="data3" labels="labels" legend="false" options="{multiTooltipTemplate: '<%= datasetLabel %> - <%= value %>'}"></canvas>
+      </div>
+    </div>
+
+  	<!-- <div class="list wrapping-list text-center top-buffer">
+    	<ion-list ng-repeat="user in users | filter:{'username':currentUser}:true"> 
+    		<ion-item ng-repeat="score in user.level1.scores.slice().reverse() | limitTo:5 track by $index"> {{score}} </ion-item>
+    	</ion-list>
+    </div> -->
+    <!-- <div class="row row-center">
     	<div class="col col-80 col-offset-10">
   			<button class="button button-positive button-width" ng-click="goBack()"> Go Back </button>
   		</div>
-    </div>
-  </ion-content>
+    </div> -->
+  </ion-content>>
 </ion-view>

@@ -11,6 +11,10 @@
 	margin-top: 70px;
 }
 
+.top-buffer-first-button-level2 {
+	margin-top: 50px;
+}
+
 .top-buffer-first-button-adjust {
 	margin-top: 30px;
 }
@@ -69,6 +73,53 @@
 .wrapping-list .item-content, .wrapping-list .item {
     overflow: initial;
     white-space: initial;
+}
+
+.level-text {
+	color: #DF0101;
+	font-family: 'bauhaus', "Times New Roman", Times, serif;
+	font-weight: bold;
+}
+
+.blur {
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+}
+
+.level-locked {
+	color: #DF0101;
+}
+
+.level-unlocked {
+	color: #298A08;
+}
+
+#gradient
+{
+  width: 100%;
+  height: 800px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.coloredBackground {
+	background-color: #000000;
+   	padding: 0px;
+   	margin: 0px;
+}
+
+.default {
+    opacity: 1;
+}
+
+.default-hidden {
+    opacity: 0;
+}
+
+.fade {
+    -webkit-transition: opacity 1s; /* For Safari 3.1 to 6.0 */
+    transition: opacity 1s;
+    opacity: 0;
 }
 
 /*.row, .scroll {

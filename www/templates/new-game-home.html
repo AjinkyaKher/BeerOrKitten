@@ -1,0 +1,91 @@
+<ion-view view-title="Choose a Level">
+  <ion-nav-bar>
+    <ion-nav-back-button class="button-clear">
+      <i class="ion-chevron-left"></i> Back
+    </ion-nav-back-button>
+  </ion-nav-bar>
+
+  <ion-content>
+      <div class="list card">
+        <!-- Level 1 -->
+        <div class="item item-avatar item-icon-right">
+          <img src="resources/images/icon.png">
+          <h2 class="level-text">LEVEL 1</h2>
+          <p>Highest Score: {{currentUserHighScoreLevel1}} </p>
+          <i class="icon ion-unlocked level-unlocked"></i>
+        </div>
+        <div class="item item-image">
+          <img src="resources/images/level1.png">
+        </div>
+        <a class="item item-icon-left assertive" ng-click="startLevel1()">
+          <i class="icon ion-ios-game-controller-b"></i>
+          PLAY
+        </a>
+
+        <!-- Level 2 -->
+        <br/><br/>
+        <div class="item item-avatar item-icon-right">
+          <img src="resources/images/icon.png">
+          <h2 class="level-text">LEVEL 2</h2>
+          <p ng-if="!level2Visibility">Score 100+ on Level 1</p>
+          <p ng-if="level2Visibility">Highest Score: {{currentUserHighScoreLevel2}}</p>
+          <i class="icon {{level2LockIconIonic}} {{level2LockIcon}}"></i>
+        </div>
+        <div class="item item-image {{blurLevel2}}">
+          <img src="resources/images/level2.png">
+        </div>
+        <a class="item item-icon-left assertive {{blurLevel2}}" ng-click="startLevel2()" ng-if="level2Visibility">
+          <i class="icon ion-ios-game-controller-b"></i>
+          PLAY
+        </a>
+        <span class="item item-icon-left assertive {{blurLevel2}}" ng-if="!level2Visibility">
+          <i class="icon ion-ios-game-controller-b"></i>
+          PLAY
+        </span>
+      </div>
+
+      <!-- Level 3 -->
+        <br/><br/>
+        <div class="item item-avatar item-icon-right">
+          <img src="resources/images/icon.png">
+          <h2 class="level-text">LEVEL 3</h2>
+          <p ng-if="!level3Visibility">Score 100+ on Level 2</p>
+          <p ng-if="level3Visibility">Highest Score: {{currentUserHighScoreLevel3}}</p>
+          <i class="icon {{level3LockIconIonic}} {{level3LockIcon}}"></i>
+        </div>
+        <div class="item item-image {{blurLevel3}}">
+          <img src="resources/images/level3.png">
+        </div>
+        <a class="item item-icon-left assertive {{blurLevel3}}" ng-click="startLevel3()" ng-if="level3Visibility">
+          <i class="icon ion-ios-game-controller-b"></i>
+          PLAY
+        </a>
+        <span class="item item-icon-left assertive {{blurLevel3}}" ng-if="!level3Visibility">
+          <i class="icon ion-ios-game-controller-b"></i>
+          PLAY
+        </span>
+
+        <!-- Level 4 -->
+        <br/><br/>
+        <div class="item item-avatar item-icon-right">
+          <img src="resources/images/icon.png">
+          <h2 class="level-text">LEVEL 4</h2>
+          <p ng-if="!level4Visibility">Score 100+ on Level 3</p>
+          <p ng-if="level4Visibility">Highest Score: {{currentUserHighScoreLevel3}}</p>
+          <i class="icon {{level4LockIconIonic}} {{level4LockIcon}}"></i>
+        </div>
+        <div class="item item-image {{blurLevel4}}">
+          <img src="resources/images/level3.png">
+        </div>
+        <a class="item item-icon-left assertive {{blurLevel4}}" ng-click="startLevel4()" ng-if="level4Visibility">
+          <i class="icon ion-ios-game-controller-b"></i>
+          PLAY
+        </a>
+        <span class="item item-icon-left assertive {{blurLevel4}}" ng-if="!level4Visibility">
+          <i class="icon ion-ios-game-controller-b"></i>
+          PLAY
+        </span>
+
+      </div>
+  </ion-content>
+</ion-view>
